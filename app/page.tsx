@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button"
 import GhostFibers from "@/components/GhostFibers"
+import GlowCursor from "@/components/GlowCursor"
 
 export default function Page() {
   return (
-    <div className="relative flex min-h-svh overflow-hidden p-6">
+    <GlowCursor>
+      <div className="relative flex min-h-svh overflow-hidden p-6">
       <div className="pointer-events-none absolute inset-0">
         <GhostFibers />
       </div>
@@ -18,6 +20,7 @@ export default function Page() {
           (Press <kbd>d</kbd> to toggle dark mode)
         </div>
       </div>
-    </div>
+      </div>
+    </GlowCursor>
   )
 }
