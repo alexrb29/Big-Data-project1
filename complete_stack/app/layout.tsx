@@ -1,4 +1,5 @@
-import { Geist, Geist_Mono, IBM_Plex_Sans, Space_Grotesk } from "next/font/google"
+import type { Metadata } from "next"
+import { Geist_Mono, IBM_Plex_Sans, Space_Grotesk } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -13,6 +14,11 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
+export const metadata: Metadata = {
+  title: "Pipeline ETL · Open-Meteo → Supabase",
+  description: "Práctica de Big Data: extraer, transformar, limpiar, filtrar y cargar datos meteorológicos.",
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="es"
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", ibmPlexSans.variable, spaceGroteskHeading.variable)}
     >
